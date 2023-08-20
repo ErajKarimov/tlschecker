@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Разделение исходного файла на 20 частей
-split -l 30000 input.txt temp_file_
+split -l 10 domains.txt temp_file_
 
 # Функция для запуска программы и сохранения вывода
 run_program() {
     input_file="$1"
     output_file="${input_file}.output"
-    ./my_program "$input_file" > "$output_file"
+    ./my_program "$input_file" "$output_file"
 }
 
 export -f run_program

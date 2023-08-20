@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Разделение исходного файла на 20 частей
-split -l 20 domains.txt temp_file_
+split -l 10 domains.txt temp_file_
 
 # Запуск программы для каждого файла
 for i in temp_file_*; do
-    ./my_program "$i" > "$i.output" &
+     ./my_program "$i" "${i}.output" &
 done
 
 # Ожидание завершения всех запущенных программ
